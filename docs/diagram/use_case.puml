@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam usecase {
+  BackgroundColor #FFF4AA
+  BorderColor #222222
+}
+skinparam actor {
+  BackgroundColor #F8D3B0
+  BorderColor #222222
+}
+
+actor "Администратор" as Admin
+actor "Тренер" as Trainer
+
+rectangle "Система учёта инвентаря" {
+  usecase "Вход в систему" as UC_Login
+  usecase "Регистрация пользователей" as UC_Register
+  usecase "Добавление инвентаря" as UC_Add
+  usecase "Изменение данных\nинвентаря" as UC_Edit
+  usecase "Удаление инвентаря" as UC_Delete
+  usecase "Просмотр отчётов" as UC_Reports
+  usecase "Просмотр инвентаря" as UC_View
+  usecase "Внесение инвентаря в БД" as UC_Enter
+  usecase "Выдача инвентаря" as UC_Issue
+}
+
+Admin -- UC_Login
+Admin -- UC_Register
+Admin -- UC_Add
+Admin -- UC_Edit
+Admin -- UC_Delete
+Admin -- UC_Reports
+Admin -- UC_View
+
+Trainer -- UC_Login
+Trainer -- UC_View
+Trainer -- UC_Enter
+Trainer -- UC_Issue
+@enduml
