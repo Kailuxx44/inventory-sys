@@ -1,5 +1,5 @@
 import sqlite3
-import os 
+import os
 
 DB_NAME = "database.db"
 SCHEMA_FILE = "schema.sql"
